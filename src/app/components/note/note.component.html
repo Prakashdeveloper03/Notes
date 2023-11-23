@@ -1,1 +1,7 @@
-<p>note works!</p>
+<div class="note">
+  <span>{{ note.text }}</span>
+  <div class="note-footer">
+    <small>{{ note.date }}</small>
+    <button (click)="onDeleteNote()" class="delete-icon">Delete</button>
+  </div>
+</div>

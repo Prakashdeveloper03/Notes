@@ -1,1 +1,9 @@
-<p>search works!</p>
+<div class="search">
+  <div class="search-icons"></div>
+  <input
+    [(ngModel)]="searchQuery"
+    (input)="onSearchChange()"
+    type="text"
+    placeholder="type to search..."
+  />
+</div>

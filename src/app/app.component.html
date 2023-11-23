@@ -1,0 +1,9 @@
+<div [class.dark-mode]="darkMode" class="container">
+  <app-header (toggleDarkMode)="toggleDarkMode()"></app-header>
+  <app-search (searchNote)="searchNotes($event)"></app-search>
+  <app-notes-list
+    [notes]="filteredNotes"
+    (addNote)="addNote($event)"
+    (deleteNote)="deleteNote($event)"
+  ></app-notes-list>
+</div>

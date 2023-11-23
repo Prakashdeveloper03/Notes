@@ -1,1 +1,8 @@
-<p>notelist works!</p>
+<div class="notes-list">
+  <app-note
+    *ngFor="let note of notes"
+    [note]="note"
+    (deleteNote)="onDeleteNote($event)"
+  ></app-note>
+  <app-add-note (addNote)="onAddNote($event)"></app-add-note>
+</div>

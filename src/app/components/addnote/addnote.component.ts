@@ -1,11 +1,22 @@
-import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-addnote',
+  selector: 'app-add-note',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './addnote.component.html',
-  styles: ``,
 })
-export class AddnoteComponent {}
+export class AddNoteComponent {
+  @Output() addNote = new EventEmitter<string>();
+  noteText: string = '';
+  characterLimit: number = 200;
+
+  onSaveClick() {
+    if (this.noteText.trim().length > 0) {
+      this.addNote.emit(this.noteText);
+      this.noteText = '';
+    }
+  }
+}

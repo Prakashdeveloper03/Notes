@@ -1,1 +1,12 @@
-<p>addnote works!</p>
+<div class="note new">
+  <textarea
+    rows="8"
+    cols="10"
+    placeholder="Type to add a note..."
+    [(ngModel)]="noteText"
+  ></textarea>
+  <div class="note-footer">
+    <small>{{ characterLimit - noteText.length }} Remaining</small>
+    <button (click)="onSaveClick()" class="save">Save</button>
+  </div>
+</div>
